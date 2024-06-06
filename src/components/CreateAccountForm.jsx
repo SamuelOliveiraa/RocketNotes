@@ -15,7 +15,7 @@ function CreateAccountForm() {
   async function handleSubmit(e) {
     e.preventDefault();
     const dataJSON = { name, email, password };
-    setMessage(false)
+    setMessage({});
     const res = await fetch("http://localhost:3333/users", {
       method: "POST",
       headers: {

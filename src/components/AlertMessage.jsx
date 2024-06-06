@@ -2,19 +2,13 @@ import { Snackbar, Alert, Slide } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { MessageContext } from "../contexts/MessageContext";
 
-function AlertMessage({ newMessage, newSeverity }) {
+function AlertMessage() {
   const [open, setOpen] = useState(false);
-  const [severity, setSeverity] = useState("error");
-  const { message, setMessage } = useContext(MessageContext);
+  const { message } = useContext(MessageContext);
 
   useEffect(() => {
-    if (newMessage !== undefined) {
-      setMessage(newMessage);
-      setSeverity(newSeverity);
-      setOpen(true);
-    }
-    console.log(message.message);
-  }, [setMessage, setSeverity, setOpen]);
+    setOpen(true);
+  }, [message]);
 
   function handleClose(event, reason) {
     if (reason === "clickaway") {
@@ -25,17 +19,21 @@ function AlertMessage({ newMessage, newSeverity }) {
   }
 
   return (
-    <Snackbar
-      open={open}
-      autoHideDuration={3000}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      onClose={handleClose}
-      TransitionComponent={props => <Slide {...props} direction="left" />}
-    >
-      <Alert onClose={handleClose} severity={severity} variant="filled" sx={{ width: "100%" }}>
-        {message}
-      </Alert>
-    </Snackbar>
+    <>
+      {message.message !== "" && (
+        <Snackbar
+          open={open}
+          autoHideDuration={3000}
+          anchorOrigin={{ vertical: "top", horizontal: "right" }}
+          onClose={handleClose}
+          TransitionComponent={props => <Slide {...props} direction="left" />}
+        >
+          <Alert onClose={handleClose} severity={message.error ? "error" : "success"} variant="filled" sx={{ width: "100%" }}>
+            {message.message}
+          </Alert>
+        </Snackbar>
+      )}
+    </>
   );
 }
 

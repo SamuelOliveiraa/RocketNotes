@@ -4,7 +4,7 @@ import Coffee from "/bg-coffee.svg";
 
 function CreateAccount() {
   return (
-    <div className="flex bg-dark-gray items-center flex-col justify-center h-screen sm:flex-row-reverse ">
+    <div className="flex bg-dark-gray  items-center flex-col justify-center h-screen sm:flex-row-reverse ">
       <FormContainer className="order-2">
         <CreateAccountForm />
       </FormContainer>
