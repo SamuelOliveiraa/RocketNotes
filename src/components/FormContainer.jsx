@@ -1,8 +1,9 @@
-function FormContainer() {
+function FormContainer({ children }) {
   return (
-    <div className="p-3 text-center flex flex-col items-center justify-center max-w-80">
-      <h1 className="text-custom-orange text-2xl">Rocket Notes</h1>
-      <p className="text-custom-gray text-sm">Aplicação para salvar e gerenciar seus links úteis.</p>
+    <div className="p-3 text-center flex flex-col items-center justify-center gap-2 w-full">
+      <h1 className="text-orange text-3xl">Rocket Notes</h1>
+      <p className="text-gray text-base">Aplicação para salvar e gerenciar seus links úteis.</p>
+      {children}
     </div>
   );
 }

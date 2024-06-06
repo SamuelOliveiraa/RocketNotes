@@ -5,3 +5,7 @@
 * {
   @apply font-inter;
 }
+body,
+html {
+  @apply min-h-screen min-w-full;
+}
