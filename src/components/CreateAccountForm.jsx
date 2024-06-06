@@ -24,6 +24,9 @@ function CreateAccountForm() {
       body: JSON.stringify(dataJSON)
     }).then(data => data.json());
     setMessage(res);
+    setTimeout(() => {
+      setMessage({ message: "" });
+    }, 4000);
     if (res.error === false) {
       navigate("/login");
     }
