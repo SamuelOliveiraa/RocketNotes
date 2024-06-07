@@ -31,7 +31,7 @@ function CreateAccountForm() {
       navigate("/login");
     }
   }
-
+ 
   return (
     <form className="max-w-80 flex flex-col gap-4 mt-10" onSubmit={handleSubmit}>
       <h2 className="text-white text-center">Crie sua conta</h2>
