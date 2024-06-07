@@ -14,6 +14,9 @@ export default {
         white: "#F4EDE8",
         input: "#232129",
         "dark-gray": "#312E38"
+      },
+      gridTemplateColumns: {
+        home: "minmax(18rem,20rem) 1fr"
       }
     }
   },

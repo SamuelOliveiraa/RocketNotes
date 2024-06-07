@@ -13,6 +13,7 @@ function GenericInput({ Icon, placehoder, text, value, setValue }) {
         value={value}
         onChange={e => setValue(e.target.value)}
         placeholder={placehoder}
+        required
       />
     </div>
   );
