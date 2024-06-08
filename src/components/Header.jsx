@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { TokenContext } from "../contexts/TokenContext";
 import { UserContext } from "../contexts/UserContext";
 
-function Header() {
+function Header({clasName}) {
   const { setToken } = useContext(TokenContext);
   const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ function Header() {
   }
 
   return (
-    <header className="col-start-2 h-24">
+    <header className={`h-24 ${clasName}`}>
       <nav className="border-b border-ligth-gray h-full">
         <ul className="flex items-center justify-between p-4">
           <li className="flex items-center gap-2">

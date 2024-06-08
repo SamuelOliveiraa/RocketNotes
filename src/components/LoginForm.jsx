@@ -15,10 +15,6 @@ function LoginForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (password.length < 6) {
-      setMessage({ message: "A senha precisa ter pelo menos 6 caracters", error: true });
-      return;
-    }
     const dataJSON = { email, password };
     setMessage({});
     const res = await fetch("http://localhost:3333/users/login", {

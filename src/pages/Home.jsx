@@ -4,6 +4,7 @@ import ErrorPage from "./ErrorPage";
 import { UserContext } from "../contexts/UserContext";
 import Header from "../components/Header";
 import Aside from "../components/Aside";
+import Container from "./Container";
 
 function Home() {
   const { token } = useContext(TokenContext);
@@ -29,10 +30,10 @@ function Home() {
   return token === "" && user ? (
     <ErrorPage />
   ) : (
-    <div className="grid grid-cols-home bg-dark-gray w-screen h-screen">
+    <Container className={"grid grid-cols-home"}>
       <Aside />
-      <Header />
-    </div>
+      <Header clasName={"col-start-2"}/>
+    </Container>
   );
 }
 

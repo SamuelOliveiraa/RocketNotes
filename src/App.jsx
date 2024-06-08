@@ -5,6 +5,7 @@ import AlertMessage from "./components/AlertMessage";
 import ErrorPage from "./pages/ErrorPage";
 import Providers from "./contexts/Providers";
 import Home from "./pages/Home";
+import CreateNote from "./pages/CreateNote";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/home" Component={Home}></Route>
           <Route path="/login" Component={Login}></Route>
           <Route path="/create-account" Component={CreateAccount}></Route>
+          <Route path="/create-note" Component={CreateNote}></Route>
           <Route path="*" Component={ErrorPage}></Route>
         </Routes>
       </Router>

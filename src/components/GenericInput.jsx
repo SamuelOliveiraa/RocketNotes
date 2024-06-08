@@ -4,17 +4,28 @@ function GenericInput({ Icon, placehoder, text, value, setValue }) {
       <label htmlFor={text} className="sr-only">
         E-mail
       </label>
-      <Icon />
-      <input
-        type={text}
-        className="bg-input rounded-md  placeholder-gray w-full"
-        name={text}
-        id={text}
-        value={value}
-        onChange={e => setValue(e.target.value)}
-        placeholder={placehoder}
-        required
-      />
+      {Icon && <Icon />}
+      {text === "textarea" ? (
+        <textarea
+          required
+          className="bg-input rounded-md  placeholder-gray w-full resize-none h-28"
+          placeholder={placehoder}
+          value={value}
+          name={text}
+          id={text}
+        ></textarea>
+      ) : (
+        <input
+          type={text}
+          className="bg-input rounded-md  placeholder-gray w-full"
+          name={text}
+          id={text}
+          value={value}
+          onChange={e => setValue(e.target.value)}
+          placeholder={placehoder}
+          required
+        />
+      )}
     </div>
   );
 }
