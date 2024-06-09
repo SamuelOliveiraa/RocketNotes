@@ -20,7 +20,7 @@ function ShowNoteById() {
             "Content-Type": "application/json"
           }
         }).then(data => data.json());
-        console.log(res)
+        console.log(res) 
         setNote(res); 
       }, 500);
     }
