@@ -21,7 +21,7 @@ function ShowNoteById() {
           }
         }).then(data => data.json());
         console.log(res) 
-        setNote(res); 
+        setNote(res);  
       }, 500);
     }
     fetchData();
