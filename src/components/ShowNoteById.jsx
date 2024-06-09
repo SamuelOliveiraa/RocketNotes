@@ -19,7 +19,7 @@ function ShowNoteById() {
             Authorization: `${token}`,
             "Content-Type": "application/json" 
           }
-        }).then(data => data.json());
+        }).then(data => data.json()); 
         console.log(res)  
         setNote(res);  
       }, 500);
