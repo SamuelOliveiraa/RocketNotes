@@ -17,7 +17,7 @@ function ShowNoteById() {
           method: "GET", 
           headers: {
             Authorization: `${token}`,
-            "Content-Type": "application/json"
+            "Content-Type": "application/json" 
           }
         }).then(data => data.json());
         console.log(res)  
