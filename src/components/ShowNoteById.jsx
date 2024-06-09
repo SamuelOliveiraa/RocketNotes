@@ -25,7 +25,7 @@ function ShowNoteById() {
       }, 500);
     }  
     fetchData();
-  }, [id, token]);
+  }, [id, token]); 
 
   async function handleDeleteNote() {
     setMessage({}); 
