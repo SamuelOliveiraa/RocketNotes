@@ -23,7 +23,7 @@ function ShowNoteById() {
         console.log(res)  
         setNote(res);  
       }, 500);
-    } 
+    }  
     fetchData();
   }, [id, token]);
 
