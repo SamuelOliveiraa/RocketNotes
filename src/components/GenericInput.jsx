@@ -12,14 +12,13 @@ function GenericInput({ Icon, placehoder, text, value, setValue }) {
           placeholder={placehoder}
           value={value}
           name={text}
-          id={text}
+          onChange={e => setValue(e.target.value)}
         ></textarea>
       ) : (
         <input
           type={text}
           className="bg-input rounded-md  placeholder-gray w-full"
           name={text}
-          id={text}
           value={value}
           onChange={e => setValue(e.target.value)}
           placeholder={placehoder}

@@ -2,15 +2,14 @@ import { Plus, X } from "lucide-react";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-function LinkItem() {
-  const [links, setLinks] = useState([]);
+function LinkItem({links, setLinks}) {
   const [text, setText] = useState("");
 
-  function handleAdd(e) {
-    e.preventDefault()
+  function handleLinks(e) {
+    e.preventDefault();
     const newLink = [...links, { id: uuidv4(), url: text }];
     setLinks(newLink);
-    setText("")
+    setText("");
   }
 
   function handleDelete(id) {
@@ -18,6 +17,11 @@ function LinkItem() {
       return link.id !== id;
     });
     setLinks(filteredLinks);
+  }
+  function handleKeyDown(e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+    }
   }
 
   return (
@@ -30,8 +34,9 @@ function LinkItem() {
           className="text-gray px-2 bg-transparent h-full w-11/12 outline-none"
           value={text}
           onChange={e => setText(e.target.value)}
+          onKeyDown={handleKeyDown}
         />
-        <button onClick={handleAdd}>
+        <button onClick={handleLinks}>
           <Plus className="w-6 h-6 text-orange" />
         </button>
       </div>

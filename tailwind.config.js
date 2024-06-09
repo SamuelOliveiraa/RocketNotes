@@ -17,7 +17,8 @@ export default {
         ligth: "#666360"
       },
       gridTemplateColumns: {
-        home: "minmax(18rem,20rem) 1fr"
+        home: "minmax(18rem,20rem) 1fr",
+        links: "repeat(auto-fill, minmax(6rem,10rem))"
       },
       gridTemplateRows: {
         note: "6rem 1fr"

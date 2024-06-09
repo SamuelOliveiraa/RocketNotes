@@ -12,7 +12,6 @@ function Home() {
 
   useEffect(() => {
     async function fetchData() {
-      console.log(token);
       if (token !== "") {
         const res = await fetch("http://localhost:3333/users", {
           method: "GET",
