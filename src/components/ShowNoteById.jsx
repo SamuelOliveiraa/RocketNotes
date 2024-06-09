@@ -28,7 +28,7 @@ function ShowNoteById() {
   }, [id, token]);
 
   async function handleDeleteNote() {
-    setMessage({});
+    setMessage({}); 
     const res = await fetch(`http://localhost:3333/notes/note/${id}`, {
       method: "DELETE",
       headers: {
