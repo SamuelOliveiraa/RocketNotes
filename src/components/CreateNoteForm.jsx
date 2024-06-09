@@ -30,7 +30,6 @@ function CreateNoteForm() {
     setTimeout(() => {
       setMessage({ message: "" });
     }, 4000);
-    console.log(res);
   }
 
   return (

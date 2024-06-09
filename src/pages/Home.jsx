@@ -5,6 +5,7 @@ import { UserContext } from "../contexts/UserContext";
 import Header from "../components/Header";
 import Aside from "../components/Aside";
 import Container from "./Container";
+import ShowNotes from "../components/ShowNotes";
 
 function Home() {
   const { token } = useContext(TokenContext);
@@ -17,7 +18,7 @@ function Home() {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            Authorization: token
+            Authorization: `${token}`
           }
         }).then(data => data.json());
         setUser(res);
@@ -31,7 +32,8 @@ function Home() {
   ) : (
     <Container className={"grid grid-cols-home"}>
       <Aside />
-      <Header clasName={"col-start-2"}/>
+      <Header clasName={"col-start-2"} />
+      <ShowNotes />
     </Container>
   );
 }
