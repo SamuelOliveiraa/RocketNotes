@@ -15,7 +15,7 @@ function ShowNoteById() {
       setTimeout(async () => {
         const res = await fetch(`http://localhost:3333/notes/note/${id}`, {
           method: "GET", 
-          headers: {
+          headers: { 
             Authorization: `${token}`,
             "Content-Type": "application/json" 
           }
