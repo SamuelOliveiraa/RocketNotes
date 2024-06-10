@@ -35,7 +35,7 @@ function Aside() {
       </ul>
       <Link to={"/create-note"} className="w-full text-center bg-orange py-3 text-dark-gray font-semibold mt-auto block  "> 
         Criar Nota
-      </Link> 
+      </Link>  
     </aside> 
   );  
 }   
