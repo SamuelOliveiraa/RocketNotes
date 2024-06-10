@@ -38,7 +38,7 @@ function Aside() {
       </Link>
     </aside> 
   ); 
-}  
+}   
  
 export default Aside;  
   
