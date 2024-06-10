@@ -33,7 +33,7 @@ function Aside() {
         <li>Todos</li>
         {allTitles && allTitles.map(title => <li key={title}>{title}</li>)}
       </ul>
-      <Link to={"/create-note"} className="w-full text-center bg-orange py-3 text-dark-gray font-semibold mt-auto block  ">
+      <Link to={"/create-note"} className="w-full text-center bg-orange py-3 text-dark-gray font-semibold mt-auto block  "> 
         Criar Nota
       </Link>
     </aside>
