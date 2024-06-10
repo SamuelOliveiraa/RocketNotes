@@ -7,19 +7,27 @@ import Providers from "./contexts/Providers";
 import Home from "./pages/Home";
 import CreateNote from "./pages/CreateNote";
 import NotePreview from "./pages/NotePreview";
+import ProtectedRoute from "./pages/ProtectedRoute";
 
 function App() {
   return (
     <Providers>
       <Router>
         <Routes>
+          {/* ROTAS PUBLICAS */}
           <Route path="/" Component={Login}></Route>
-          <Route path="/home" Component={Home}></Route>
           <Route path="/login" Component={Login}></Route>
-          <Route path="/note/:id" Component={NotePreview}></Route>
           <Route path="/create-account" Component={CreateAccount}></Route>
-          <Route path="/create-note" Component={CreateNote}></Route>
           <Route path="*" Component={ErrorPage}></Route>
+
+          {/* Rota para a página inicial */}
+          <Route path="/home" element={<ProtectedRoute element={Home} />} />
+          <Route path="/note/:id" element={<ProtectedRoute element={NotePreview} />} />
+          <Route path="/create-note" element={<ProtectedRoute element={CreateNote} />} />
+          {/* 
+          <ProtectedRoute path="/home" Component={Home} />
+          <ProtectedRoute path="/note/:id" Component={NotePreview} />
+          <ProtectedRoute path="/create-note" Component={CreateNote} /> */}
         </Routes>
       </Router>
       {<AlertMessage />}

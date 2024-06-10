@@ -18,7 +18,8 @@ export default {
       },
       gridTemplateColumns: {
         home: "minmax(18rem,20rem) 1fr",
-        links: "repeat(auto-fill, minmax(6rem,10rem))"
+        links: "repeat(auto-fill, minmax(6rem,10rem))",
+        tags: "repeat(auto-fill, minmax(5rem, max-content))"
       },
       gridTemplateRows: {
         note: "6rem 1fr"
