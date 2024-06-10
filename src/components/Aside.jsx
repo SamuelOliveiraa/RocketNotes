@@ -37,7 +37,7 @@ function Aside() {
         Criar Nota
       </Link>
     </aside>
-  );
+  ); 
 } 
 
 export default Aside;
