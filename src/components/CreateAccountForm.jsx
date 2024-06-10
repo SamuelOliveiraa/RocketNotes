@@ -4,12 +4,14 @@ import Button from "./Button";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { MessageContext } from "../contexts/MessageContext";
+import { TokenContext } from "../contexts/TokenContext";
 
 function CreateAccountForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { setMessage } = useContext(MessageContext);
+  const { setToken } = useContext(TokenContext);
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
@@ -24,14 +26,15 @@ function CreateAccountForm() {
       body: JSON.stringify(dataJSON)
     }).then(data => data.json());
     setMessage(res);
+    setToken(res.token);
     setTimeout(() => {
       setMessage({ message: "" });
     }, 4000);
     if (res.error === false) {
-      navigate("/login");
+      navigate("/home");
     }
   }
- 
+
   return (
     <form className="max-w-80 flex flex-col gap-4 mt-10" onSubmit={handleSubmit}>
       <h2 className="text-white text-center">Crie sua conta</h2>
