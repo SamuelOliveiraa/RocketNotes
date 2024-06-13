@@ -20,7 +20,7 @@ function Header({ clasName }) {
       <nav className="border-b border-ligth-gray h-full">
         <ul className="flex items-center justify-between p-4">
           <li>
-            <Link to={`/user/:${user.id}`} className="flex items-center gap-2">
+            <Link to={`/profile/${user.id}`} className="flex items-center gap-2">
               <img src="https://github.com/SamuelOliveiraa.png" alt="Imagem perfil" className="rounded-full w-16 h-16 overflow-x-hidden" />
               <div className="flex flex-col">
                 <span className="text-gray">Bem vindo</span>

@@ -69,7 +69,7 @@ function ShowNoteById() {
           <div className="my-5 grid grid-cols-tags gap-2">
             {note.tags &&
               note.tags.map(tag => (
-                <span key={tag.id} className="p-1 text-sm text-dark-gray bg-orange rounded whitespace-nowrap">
+                <span key={tag.id} className="p-1 text-sm text-black bg-orange rounded whitespace-nowrap text-center">
                   {tag.name}
                 </span>
               ))}
